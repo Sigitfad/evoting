@@ -1,0 +1,71 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-button fill="clear" (click)="routeTo('data-calon-terdaftar')">Data Kandidat</ion-button>
+    <br/>
+    <ion-button fill="clear" (click)="routeTo('hasil-voting')">Hasil Voting</ion-button>
+
+    <!-- logout -->
+    <br>
+    <ion-button fill="clear" (click)="logout()">
+      Logout &nbsp;
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Hasil Voting</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="konten">
+      <h1> Data Data Pemilih </h1>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Calon</ion-card-title>
+        </ion-card-header>
+        <h2>{{data.total_calon}}</h2>
+      </ion-card>
+
+      <!-- card -->
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Pemilih</ion-card-title>
+        </ion-card-header>
+        <h2>{{data.total_pemilih}}</h2>
+      </ion-card>
+
+      <!-- card -->
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Sudah Memilih</ion-card-title>
+        </ion-card-header>
+        <h2>{{data.already_vote}}</h2>
+      </ion-card>
+
+      <!-- card -->
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Belum Memilih</ion-card-title>
+        </ion-card-header>
+        <h2>{{data.not_yet_vote}}</h2>
+      </ion-card>
+
+
+    </div>
+  </ion-content>
+</div>

@@ -1,0 +1,72 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button fill="clear" (click)="routeTo('data-calon-terdaftar')">Data Kandidat</ion-button><br/>
+    <ion-button fill="clear" (click)="routeTo('hasil-voting')">Hasil Voting</ion-button>
+    <br>
+    <ion-button fill="clear" (click)="logout()">
+      Logout 
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+  
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Data Kandidat</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="kandidatModal({}, 'add')">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-row>
+      <!-- with index -->
+      <ion-col *ngFor="let item of data; let i = index" size="12">
+        <ion-card>
+          <img alt="{{ item.name }}" src="{{ item.foto_kandidat }}" class="r-img" />
+          <ion-card-header>
+            <h4 class="ion-text-center font-bold ion-text-wrap" color="secondary">
+              Calon {{ i + 1 }}
+            </h4>
+          </ion-card-header>
+          <ion-row>
+            <!-- total vote -->
+            <ion-col size="12">
+              <ion-card-subtitle class="ion-text-center font-bold" color="secondary">
+                Total Vote
+              </ion-card-subtitle>
+              <h4 style="background-color: rgb(46, 36, 36); color: white;"  class="ion-text-center font-bold"   color="secondary">
+                {{ item.jumlah_vote }}
+              </h4>
+            </ion-col>
+            <ion-col class="ion-text-center" size="6">
+              <ion-button color="primary" size="block" (click)="kandidatModal(item, 'edit')">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+
+            <ion-col class="ion-text-center" size="6" (click)="deleteKandidat(item.id)">
+              <ion-button color="danger" size="block">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</div>

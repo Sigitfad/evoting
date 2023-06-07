@@ -1,0 +1,7 @@
+{
+  "name": "evote",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

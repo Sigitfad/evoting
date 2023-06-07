@@ -1,0 +1,30 @@
+<div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Registrasi</ion-card-title>
+    </ion-card-header>
+
+
+    <ion-list>
+      <ion-input type="text" fill="outline" label="Nama" labelPlacement="floating" [(ngModel)]="form.nama"></ion-input>
+
+      <ion-input type="number" fill="outline" label="NIK" labelPlacement="floating" [(ngModel)]="form.nik"></ion-input>
+      <ion-input type="number" fill="outline" label="No WhatsApp" labelPlacement="floating"
+        [(ngModel)]="form.no_hp"></ion-input>
+
+      <!-- alamat -->
+      <ion-input type="text" fill="outline" label="Alamat" labelPlacement="floating"
+        [(ngModel)]="form.alamat"></ion-input>
+
+      <ion-input type="password" fill="outline" label="Password" labelPlacement="floating" [ngModel]="form.password"
+        (ngModelChange)="form.password = $event"></ion-input>
+
+      <ion-input type="password" fill="outline" label="Konfirmasi Password" labelPlacement="floating"
+        [ngModel]="form.password" (ngModelChange)="form.password = $event"></ion-input>
+
+      <ion-button class="reg" (click)="register()">Register</ion-button>
+
+      <ion-button class="register" fill="clear" (click)="login()">Sudah Punya Akun? Klik disini</ion-button>
+    </ion-list>
+  </ion-card>
+</div>

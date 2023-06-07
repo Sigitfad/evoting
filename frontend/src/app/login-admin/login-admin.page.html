@@ -1,0 +1,36 @@
+<div>
+  <ion-img src="../.../../../assets/icon/e-logo.jpg"
+  alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+  <h1>Login Admin</h1>
+  <!-- <ion-button color="">Primary</ion-button>
+  <div id="container">
+    <ion-button (click)="klik()">
+      click
+    </ion-button> -->
+  <ion-list>
+
+    <ion-input type="email" fill="outline" label="Email" labelPlacement="floating" [(ngModel)]="form.email"></ion-input>
+    <ion-input type="password" fill="outline" label="Password" labelPlacement="floating"
+      [(ngModel)]="form.password"></ion-input>
+
+    <br><br>
+
+    <ion-row>
+      <ion-col size="100">
+        <ion-button class="login" (click)="login()">
+          Login
+        </ion-button>
+
+        <!-- back button -->
+        <ion-button class="back" (click)="back()">
+          Back
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <br/>
+  <br/>
+  <h4>ⓒ Kelompok 7 - Final Project SMT4 2023 </h4>
+
+
+</div>

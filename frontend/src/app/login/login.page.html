@@ -1,0 +1,35 @@
+<div>
+  <!-- <h1>Login</h1> -->
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title >SELAMAT DATANG DI <br/>E-VOTING</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+  <ion-img src="../.../../../assets/icon/e-logo.jpg"
+    alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+
+
+  <ion-list>
+
+    <ion-input type="text" fill="outline" label="NIK" labelPlacement="floating" [(ngModel)]="form.nik"></ion-input>
+
+    <ion-input type="password" fill="outline" label="Password" labelPlacement="floating"
+      [(ngModel)]="form.password"></ion-input>
+
+    <ion-button class="login" (click)="masuk()">
+      Login
+    </ion-button>
+
+
+    <ion-button class="register ion-text-center" fill="clear" (click)="registrasi()">&nbsp;&nbsp;&nbsp;&nbsp;Belum Punya Akun? Klik
+      disini</ion-button>
+    <ion-button class="login-admin" fill="clear" (click)="loginAdmin()">&nbsp;Login Admin</ion-button>
+  </ion-list>
+  <br/>
+  <br/>
+  <h4>ⓒ Kelompok 7 - Final Project SMT4 2023 </h4>
+
+
+</div>

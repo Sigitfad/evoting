@@ -1,0 +1,57 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-button fill="clear" (click)="routeTo('data-calon')">Data Calon</ion-button>
+    <ion-button fill="clear" (click)="routeTo('data-calon-terdaftar')">Calon Terdaftar</ion-button>
+    <ion-button fill="clear">Hasil Voting</ion-button>
+
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="konten">
+      <h1>Masukan calon kepala desa </h1>
+      <ion-input label="Nama Lengkap calon" label-placement="floating" fill="solid"
+        placeholder="Enter text"></ion-input>
+
+      <br />
+
+      <ion-input label="NIK" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+      <br />
+      <ion-input label="Pendidikan Terakhir" label-placement="floating" fill="outline"
+        placeholder="Enter text"></ion-input>
+      <br />
+
+      <ion-input label="Nama Wakil Calon" label-placement="floating" fill="outline"
+        placeholder="Enter text"></ion-input>
+      <br />
+
+      <ion-input label="Pendidikan Terakhir Wakil Calon" label-placement="floating" fill="outline"
+        placeholder="Enter text"></ion-input>
+      <br />
+
+      <ion-input label="Visi & Misi" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+      <br />
+
+      <ion-item>
+        <ion-label floating>Pilih foto</ion-label>
+        <ion-input type="file"></ion-input>
+      </ion-item>
+
+
+    </div>
+  </ion-content>
+</div>

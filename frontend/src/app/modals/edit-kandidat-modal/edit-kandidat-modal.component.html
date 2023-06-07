@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="cancel()" default-href="#"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title *ngIf="type === 'edit'">Edit Kandidat</ion-title>
+    <ion-title *ngIf="type === 'add'">Tambah Kandidat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informasi Kandidat</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input label="Nama Ketua" labelPlacement="floating" placeholder="Nama Ketua"
+          [(ngModel)]="form.nama_ketua"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" label="NIK Ketua" labelPlacement="floating" placeholder="NIK Ketua"
+          [(ngModel)]="form.nik_ketua"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Pendidikan Terakhir</ion-label>
+        <ion-select [(ngModel)]="form.pendidikan_terakhir_ketua">
+          <ion-select-option value="SMA">SMA</ion-select-option>
+          <ion-select-option value="D3">D3</ion-select-option>
+          <ion-select-option value="S1">S1</ion-select-option>
+          <ion-select-option value="S2">S2</ion-select-option>
+          <ion-select-option value="S3">S3</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Nama Wakil" labelPlacement="floating" placeholder="Nama Wakil"
+          [(ngModel)]="form.nama_wakil"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" label="NIK Wakil" labelPlacement="floating" placeholder="NIK Wakil"
+          [(ngModel)]="form.nik_wakil"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Pendidikan Terakhir</ion-label>
+        <ion-select [(ngModel)]="form.pendidikan_terakhir_wakil">
+          <ion-select-option value="SMA">SMA</ion-select-option>
+          <ion-select-option value="D3">D3</ion-select-option>
+          <ion-select-option value="S1">S1</ion-select-option>
+          <ion-select-option value="S2">S2</ion-select-option>
+          <ion-select-option value="S3">S3</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- visi -->
+      <ion-item>
+        <ion-textarea label="Visi" labelPlacement="floating" placeholder="Visi" [(ngModel)]="form.visi"></ion-textarea>
+      </ion-item>
+
+      <!-- misi -->
+      <ion-item>
+        <ion-textarea label="Misi" labelPlacement="floating" placeholder="Misi" [(ngModel)]="form.misi"></ion-textarea>
+      </ion-item>
+
+      <!-- image -->
+      <ion-item>
+        <h5>Image</h5>
+        <ion-card>
+          <ion-card-content>
+            <!-- show image -->
+            <img alt="form.nama_ketua" id="image" src="{{ form.foto_kandidat }}" *ngIf="form.foto_kandidat">
+
+            <ion-item>
+              <ion-icon lazy="true" slot="start" name="image"></ion-icon>
+              <input type="file" id="file-input" accept="image/png, image/jpeg" (change)="loadImage($event)">
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-button expand="block" (click)="save()">Save</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

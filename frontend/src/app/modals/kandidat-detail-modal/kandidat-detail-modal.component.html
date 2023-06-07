@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="cancel()" default-href="#"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Detail Kandidat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title class="modals">Calon 1</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col><img alt="{{data.nama_ketua}}" src="{{data.foto_kandidat}}" /></ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <ion-card-content>
+      <!-- bold -->
+      <h2 style="font-weight: bold;">Nama Ketua: </h2>
+      <p>
+        {{data.nama_ketua}}
+      </p>
+
+      <br>
+
+      <h2 style="font-weight: bold;">Nama Wakil: </h2>
+      <p>
+        {{data.nama_wakil}}
+      </p>
+
+      <br>
+
+      <h2 style="font-weight: bold;">Visi: </h2>
+      <p>
+        {{data.visi}}
+      </p>
+
+      <br>
+
+      <h2 style="font-weight: bold;">Misi: </h2>
+      <p>
+        {{data.misi}}
+      </p>
+      <br>
+
+      <ion-button expand="block" *ngIf="isVoted" disabled>
+        Sudah Memilih
+      </ion-button>
+
+      <ion-button expand="block" (click)="voteAlert()" *ngIf="!isVoted">
+        Pilih Calon
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
